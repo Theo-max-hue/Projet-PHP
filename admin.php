@@ -3,12 +3,6 @@
 include "user.class.php";
 include "connexion.php";
 
-//base pour la modif
-$update = "update User set truc = ? where numero_utilisateur = ?";
-
-//base suppression
-$delete = "delete from User where numero_utilisateur = id values(?)"; //voir pour le faire avec requete préparée
-
 function afficherUser($tab)
 {
     foreach ($tab as $user) { ?>
@@ -28,8 +22,6 @@ function afficherUser($tab)
         exit();
     } else
         $bienvenue = "Bienvenue administrateur";
-
-
             ?>
 
     <!DOCTYPE html>

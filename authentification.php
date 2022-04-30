@@ -15,8 +15,9 @@ if (isset($valider)) {
     } elseif (count($user) > 0) {
         $_SESSION["prenom_nom"] = ucfirst(strtolower($user[0]["prenom"])) .
             " "  .  strtoupper($user[0]["nom"]);
+        $_SESSION["pseudo"] = $pseudo;
         $_SESSION["connecter"] = "yes";
-        header("location:session.php");
+        header("location:acceuil.php");
     } else
         $erreur = "Mauvais login ou mot de passe!";
 }

@@ -125,7 +125,7 @@ function getUser()
         $pseudo = $donnees['pseudo'];
         $pass = $donnees['password'];
         echo ($id . $nom . $prenom . $pseudo . $pass);
-        chargerUser($id, $nom, $prenom, $pseudo, $pass);
+        $tab[] = new User($id, $nom, $prenom, $pseudo, $pass);
         var_dump($tab);
     }
 

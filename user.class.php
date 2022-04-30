@@ -85,6 +85,22 @@ class UserManager
         }
         return $tab;
     }
+    
+    public function getById($pseudo)
+    {
+        include("connexion.php");
+        $getOne = $this->db->query("select * from User where pseudo = " . $pseudo);
+        if ($user = $getOne->fetch(PDO::FETCH_ASSOC)){
+            $id = $user['numero_utilisateur'];
+            $nom = $user['nom'];
+            $prenom = $user['prenom'];
+            $pseudo = $user['pseudo'];
+            $pass = $user['password'];
+
+            return new User($id, $nom, $prenom, $pseudo, $pass);
+        }
+    }
+
 
     public function setDb(PDO $db)
     {
