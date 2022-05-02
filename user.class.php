@@ -86,10 +86,10 @@ class UserManager
         return $tab;
     }
     
-    public function getById($pseudo)
+    public function getByPseudo($pseudo)
     {
-        include("connexion.php");
-        $getOne = $this->db->query("select * from User where pseudo = " . $pseudo);
+        $getOne = $this->db->prepare("select * from User where pseudo=? limit 1");
+        $user = $getOne->execute(array($pseudo));
         if ($user = $getOne->fetch(PDO::FETCH_ASSOC)){
             $id = $user['numero_utilisateur'];
             $nom = $user['nom'];
@@ -99,6 +99,12 @@ class UserManager
 
             return new User($id, $nom, $prenom, $pseudo, $pass);
         }
+    }
+
+    public function updateUser($nom, $prenom, $pseudo, $password)
+    {
+        $update = $this->db->prepare("update User set nom=?, prenom=?, pseudo=?, password=?");
+        $update->execute(array($nom, $prenom, $pseudo, md5($password)));
     }
 
 

@@ -2,16 +2,22 @@
 
 include "user.class.php";
 include "connexion.php";
+include "infos.php";
 
 session_start();
+@$valider = $_POST["enregistre"];
 if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
+}if (isset($valider)) {
+    $manager = new UserManager($pdo);
+    if ($manager->updateUser($nom, $prenom, $pseudo, $password)){
+        header("location:acceuil.php");
+        }
 }
 else{
     $manager = new UserManager($pdo);
-    $user = $manager->getById($_SESSION["pseudo"]);
-    var_dump($user);
+    $user = $manager->getByPseudo($_SESSION["pseudo"]);
 }
 
 ?>
@@ -25,29 +31,31 @@ else{
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body onLoad="document.form.pseudo.focus()">
+<body onLoad="document.formProfile.nom.focus()">
 
-<form method="post">
+<form method="post" name="formProfile">
 
     <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">Nom</span>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control"  name="nom" placeholder="<?php echo($user->getNom()); ?>" value= "<?=$nom?>">
     </div>
 
     <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">Prenom</span>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control" name="prenom" placeholder="<?php echo($user->getPrenom()); ?>" value= "<?=$prenom?>">
     </div>
 
     <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">Pseudo</span>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control" name="pseudo" placeholder="<?php echo($user->getPseudo()); ?>" value= "<?=$pseudo?>">
     </div>
 
     <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">Mot de Passe</span>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control" name="password" placeholder="<?php echo($user->getPass()); ?>" value= "<?=$password?>">
     </div>
+
+    <input type="submit" name="enregistrer" value="S'enregistrer" />
 </form>
 
 </body>

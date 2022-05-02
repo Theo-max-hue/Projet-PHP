@@ -3,6 +3,13 @@
 include "user.class.php";
 include "connexion.php";
 
+session_start();
+if ($_SESSION["connecter"] != "yes") {
+    header("location:authentification.php");
+    exit();
+} else
+    $bienvenue = "Bienvenue administrateur";
+
 function afficherUser($tab)
 {
     foreach ($tab as $user) { ?>
@@ -15,14 +22,9 @@ function afficherUser($tab)
         <tr><?php
         }
     }
-
-    session_start();
-    if ($_SESSION["connecter"] != "yes") {
-        header("location:authentification.php");
-        exit();
-    } else
-        $bienvenue = "Bienvenue administrateur";
-            ?>
+            
+            
+?>
 
     <!DOCTYPE html>
     <html>
