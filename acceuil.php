@@ -71,7 +71,7 @@ else
     <div class="row">
 
      <div class="col" id="div_avec_scrollFirst">
-        <div class="flecheFirst"> <input type="image" src="./image/btn_gauche.png" id="defilement_gaucheFirst" alt="Submit" width="48" height="100px"></div>
+        <div class="flecheFirst"> <input type="image1" src="./image/btn_gauche.png" id="defilement_gaucheFirst" alt="Submit" width="48" height="100px"></div>
 
 
             <a href="#" ></a> <img src="./image/missileTurque.jpg" class="rounded" alt="test" width="300px"></a>
@@ -88,7 +88,7 @@ else
 
             <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
 
-            <div class="flecheDroiteFirst" ><input type="image" src="./image/btn-droit.png" id="defilement_droiteFirst" alt="Submit" width="48" height="100px"></div>
+            <div class="flecheDroiteFirst" ><input type="image1" src="./image/btn-droit.png" id="defilement_droiteFirst" alt="Submit" width="48" height="100px"></div>
         </div>
     </div>
     </div>

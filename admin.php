@@ -43,7 +43,7 @@ function afficherUser($tab)
       <td><?php echo $user->getPseudo() . '<br/>'; ?></td>
       <td><?php echo $user->getPass() . '<br/>'; ?></td>
     </tr></tbody>
-    <button type="button" class="btn btn-danger">Supprimer</button>
+    <button type="button" class="btn btn-danger">Supprimer <?php echo $user->getPrenom() . '<br/>'; ?></button>
     
     <?php
     

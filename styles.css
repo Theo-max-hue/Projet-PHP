@@ -186,6 +186,10 @@ transform: scale(1.05);
     margin-bottom:0;
 }
 
+.footer-dark .item.social {
+    text-align:center;
+}
+
 
 .footer-dark .copyright {
     text-align:center;
