@@ -10,19 +10,39 @@ if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 }if (isset($valider)) {
-    echo('teub');
+    echo($_SESSION['pseudo_user']);
     $manager = new UserManager($pdo);
-    if ($manager->updateUser($_GET('nom'), $_GET('prenom'), $_GET('pseudo'), $_GET('password'))){
-        echo($_GET('nom'));
-        header("location:acceuil.php");
-        }
+    $manager->updateUser($nom, $prenom, $pseudo, $password, $_SESSION['id_user']);
+    $user = $manager->getById($_SESSION['id_user']);
 }
 else{
     $manager = new UserManager($pdo);
-    $user = $manager->getByPseudo($_SESSION["pseudo"]);
+    $user = $manager->getById($_SESSION['id_user']);
 }
 
 ?>
+
+<script>
+
+    //si verif des champs avec js adapter :
+
+// const nameInput = document.querySelector('input'); 
+// const form = document.querySelector('form'); //mettre le nom du formulaire
+
+// nameInput.addEventListener('input', () => {
+//   nameInput.setCustomValidity(''); //initialise le texte de l'erreur dans l'input de name
+//   nameInput.checkValidity(); //permet de checker a chaque ajout de l'utilisateur
+// });
+
+// nameInput.addEventListener('invalid', () => {
+//   if(nameInput.value === '') {
+//     nameInput.setCustomValidity("Veuillez saisir votre nom d'utilisateur !");  //si champs vide 
+//   } else {
+//     nameInput.setCustomValidity("Un nom d'utilisateur ne peut contenir que des lettres minuscules et majuscules, veuillez réessayer");
+//   }
+// });
+
+</script>
 
 
 <!DOCTYPE html>
@@ -33,9 +53,9 @@ else{
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body onLoad="document.formProfile.nom.focus()">
+<body onLoad="document.formProfil.nom.focus()">
 
-<form method="post" name="formProfile">
+<form method="post" name="formProfil">
 
     <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">Nom</span>
@@ -57,7 +77,8 @@ else{
     <input type="text" class="form-control" name="password" placeholder="<?php echo($user->getPass()); ?>" value= "<?=$password?>">
     </div>
 
-    <input type="submit" name="S'enregistrer" value="Envoyer" />
+    <input type="submit" name="enregistre" value="Envoyer" />
 </form>
 
 </body>
+

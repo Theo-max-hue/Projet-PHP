@@ -7,10 +7,10 @@ if ($_SESSION["connecter"] != "yes") {
 }
 if (date("H") < 18)  //PAGE QUI S'AFFICHE EN SE CONNECTANT
     $bienvenue = "Bonjour "  .
-        $_SESSION["prenom_nom"];
+        $_SESSION["pseudo_user"];
 else
     $bienvenue = "Bonsoir "  .
-        $_SESSION["prenom_nom"];
+        $_SESSION["pseudo_user"];
 ?>
 
 

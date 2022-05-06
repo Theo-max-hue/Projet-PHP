@@ -2,20 +2,20 @@
 
 session_start();
 include("infos.php");
+include('user.class.php');
+include("connexion.php");
 @$valider = $_POST["valider"];
 $erreur = "";
 if (isset($valider)) {
-    include("connexion.php");
-    $verify = $pdo->prepare("select * from User where pseudo=? and password=? limit 1");
-    $verify->execute(array($pseudo, $pass_crypt));
-    $user = $verify->fetchAll();
-    if ($pseudo == "admin" && $pass_crypt == md5("admin")) {
+    
+    $manager = new UserManager($pdo);
+    $user = $manager->Authentification($pseudo, $pass_crypt);// si pseudo/mdp valides, crée objet user
+    if ($pseudo == "admin" && $pass_crypt == md5("admin")) { // changer avec ajout de droits dans la bdd
         $_SESSION["connecter"] = "yes";
         header("location:admin.php");
-    } elseif (count($user) > 0) {
-        $_SESSION["prenom_nom"] = ucfirst(strtolower($user[0]["prenom"])) .
-            " "  .  strtoupper($user[0]["nom"]);
-        $_SESSION["pseudo"] = $pseudo;
+    } elseif ($user !== NULL) { //vérif si la variable $user est vide
+        $_SESSION["pseudo_user"] = $pseudo;
+        $_SESSION["id_user"] = $user->getId();
         $_SESSION["connecter"] = "yes";
         header("location:acceuil.php");
     } else

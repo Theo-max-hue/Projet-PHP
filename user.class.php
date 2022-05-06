@@ -86,10 +86,10 @@ class UserManager
         return $tab;
     }
     
-    public function getByPseudo($pseudo)
+    public function getById($id)
     {
-        $getOne = $this->db->prepare("select * from User where pseudo=? limit 1");
-        $user = $getOne->execute(array($pseudo));
+        $getOne = $this->db->prepare("select * from User where numero_utilisateur=? limit 1"); //savoir a quoi sert le limit1
+        $user = $getOne->execute(array($id));
         if ($user = $getOne->fetch(PDO::FETCH_ASSOC)){
             $id = $user['numero_utilisateur'];
             $nom = $user['nom'];
@@ -101,10 +101,30 @@ class UserManager
         }
     }
 
-    public function updateUser($nom, $prenom, $pseudo, $password)
+    public function Authentification($pseudo, $pass_crypt)
     {
-        $update = $this->db->prepare("update User set nom=?, prenom=?, pseudo=?, password=?");
-        $update->execute(array($nom, $prenom, $pseudo, md5($password)));
+        $verify = $this->db->prepare("select * from User where pseudo=? and password=? limit 1");
+        $verify->execute(array($pseudo, $pass_crypt));
+        if ($user = $verify->fetch(PDO::FETCH_ASSOC)){
+            $id = $user['numero_utilisateur'];
+            $nom = $user['nom'];
+            $prenom = $user['prenom'];
+            $pseudo = $user['pseudo'];
+            $pass = $user['password'];
+
+            return new User($id, $nom, $prenom, $pseudo, $pass);
+        }
+    }
+
+    public function updateUser($nom, $prenom, $pseudo, $password, $id)
+    {
+        $update = $this->db->prepare("update User set nom=?, prenom=?, pseudo=?, password=? where numero_utilisateur=?");
+        $update->execute(array($nom, $prenom, $pseudo, md5($password), $id));
+    }
+
+    public function deleteUser(User $user){
+        $delete = $this->db->prepare("delete from User where id =?");
+        $delete->execute(array($user->getId()));
     }
 
 
@@ -113,3 +133,5 @@ class UserManager
         $this->db = $db;
     }
 }
+
+

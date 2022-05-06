@@ -28,8 +28,8 @@ function afficherUser($tab)
 <table class="table table-striped table-dark">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">Prenom</th>
+      <th>id</th>
+      <th>Prenom</th>
       <th scope="col">Nom</th>
       <th scope="col">Pseudo</th>
       <th scope="col">PASSWORD</th>
@@ -37,13 +37,13 @@ function afficherUser($tab)
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><?php echo $user->getId() . '<br/>'; ?></th>
-      <td><?php echo $user->getNom() . '<br/>'; ?></td>
-      <td><?php echo $user->getPrenom() . '<br/>'; ?></td>
-      <td><?php echo $user->getPseudo() . '<br/>'; ?></td>
-      <td><?php echo $user->getPass() . '<br/>'; ?></td>
+      <th scope="row"><?php echo $user->getId()?></th>
+      <td><?php echo $user->getNom()?></td>
+      <td><?php echo $user->getPrenom()?></td>
+      <td><?php echo $user->getPseudo()?></td>
+      <td><?php echo $user->getPass()?></td>
     </tr></tbody>
-    <button type="button" class="btn btn-danger">Supprimer <?php echo $user->getPrenom() . '<br/>'; ?></button>
+    <button type="button" class="btn btn-danger">Supprimer <?php echo $user->getPrenom()?></button>
     
     <?php
     
