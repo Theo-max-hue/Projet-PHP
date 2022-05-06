@@ -61,33 +61,7 @@ else
         </div>
     </div>
 </nav>
-<div class="container-title">
-    <h1>Bullets</h1>
-</div>
-<div class="container"width=100%;>
 
-    <div class="row">
-
-        <div class="col">
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-
-        </div>
-
-    </div>
 </div>
 <div class="container-title">
     <h1>Missile</h1>
@@ -96,7 +70,15 @@ else
 
     <div class="row">
 
-        <div class="col">
+     <div class="col" id="div_avec_scrollFirst">
+        <div class="flecheFirst"> <input type="image1" src="./image/btn_gauche.png" id="defilement_gaucheFirst" alt="Submit" width="48" height="100px"></div>
+
+
+            <a href="#" ></a> <img src="./image/missileTurque.jpg" class="rounded" alt="test" width="300px"></a>
+
+            <a href="#" ></a> <img src="./image/missile pakistan.jpg" class="rounded" alt="test" width="300px"></a>
+
+            <a href="#" ></a> <img src="./image/missile.jpg" class="rounded" alt="test" width="300px"></a>
 
             <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
 
@@ -106,15 +88,9 @@ else
 
             <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
 
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-
-
+            <div class="flecheDroiteFirst" ><input type="image1" src="./image/btn-droit.png" id="defilement_droiteFirst" alt="Submit" width="48" height="100px"></div>
         </div>
-
+    </div>
     </div>
 </div>
 <div class="container-title">
