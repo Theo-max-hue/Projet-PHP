@@ -10,8 +10,10 @@ if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 }if (isset($valider)) {
+    echo('teub');
     $manager = new UserManager($pdo);
-    if ($manager->updateUser($nom, $prenom, $pseudo, $password)){
+    if ($manager->updateUser($_GET('nom'), $_GET('prenom'), $_GET('pseudo'), $_GET('password'))){
+        echo($_GET('nom'));
         header("location:acceuil.php");
         }
 }
@@ -55,7 +57,7 @@ else{
     <input type="text" class="form-control" name="password" placeholder="<?php echo($user->getPass()); ?>" value= "<?=$password?>">
     </div>
 
-    <input type="submit" name="enregistrer" value="S'enregistrer" />
+    <input type="submit" name="S'enregistrer" value="Envoyer" />
 </form>
 
 </body>
