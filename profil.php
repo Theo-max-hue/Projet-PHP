@@ -14,6 +14,7 @@ if ($_SESSION["connecter"] != "yes") {
     $manager = new UserManager($pdo);
     $manager->updateUser($nom, $prenom, $pseudo, $password, $_SESSION['id_user']);
     $user = $manager->getById($_SESSION['id_user']);
+    header("location:acceuil.php");
 }
 else{
     $manager = new UserManager($pdo);
@@ -42,6 +43,12 @@ else{
 //   }
 // });
 
+function verif(){
+    if(confirm("Etes-vous sûr de vouloir enregistrer ces informations ?")){
+        // faire une verif et changer la variable valider pour qu'elle soit accessible en js
+
+    }
+}
 </script>
 
 
@@ -77,7 +84,8 @@ else{
     <input type="text" class="form-control" name="password" placeholder="<?php echo($user->getPass()); ?>" value= "<?=$password?>">
     </div>
 
-    <input type="submit" name="enregistre" value="Envoyer" />
+    <input class="btn btn-success" id="input" type="submit" name="enregistre" value="Enregistrer" onclick="verif()"/>
+    <button onclick="window.location.href = 'acceuil.php';" type="button" class="btn btn-danger">Annuler</button>
 </form>
 
 </body>

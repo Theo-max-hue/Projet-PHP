@@ -122,10 +122,20 @@ class UserManager
         $update->execute(array($nom, $prenom, $pseudo, md5($password), $id));
     }
 
-    public function deleteUser(User $user){
-        $delete = $this->db->prepare("delete from User where id =?");
-        $delete->execute(array($user->getId()));
+    public function deleteUser(){
+        if(isset($_POST['comment_id'])){
+ 
+            $comment_id = $_POST['comment_id'];
+         
+            //  query to update data 
+         
+            $result = $this->db->prepare("delete from User where comment_id='$comment_id'");
+            $result->execute();
+            if($result){
+                echo 'data supprimer';
+            }
     }
+}
 
 
     public function setDb(PDO $db)

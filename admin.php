@@ -9,6 +9,21 @@
     <title>Admin</title>
 </head>
 <body>
+    <script>
+        function del(id){
+            if(confirm("Voulez-vous supprimer l'utilisateur avec l'id : "+ id + "?")){
+            //     fetch("mysql:host=devbdd.iutmetz.univ-lorraine.fr;dbname=gamard3u_bdd_php", "gamard3u_appli", "32021323", {
+            //     method: 'DELETE',
+            // })
+            //     .then(function () {
+            //         affichage();
+            //         display('Add');
+            //     })
+            //     .catch(err => console.log(err));
+            // document.getElementById('saisie').value = '';  //trouver pour utiliser la classe usermanager avec requete ajax
+            }
+        }
+    </script>
 <?php
 
 include "user.class.php";
@@ -43,7 +58,7 @@ function afficherUser($tab)
       <td><?php echo $user->getPseudo()?></td>
       <td><?php echo $user->getPass()?></td>
     </tr></tbody>
-    <button type="button" class="btn btn-danger">Supprimer <?php echo $user->getPrenom()?></button>
+    <button type="button" onclick="del(this.value)" value="<?=$user->getId();?>" class="btn btn-danger">Supprimer <?php echo $user->getPrenom()?></button>
     
     <?php
     

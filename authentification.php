@@ -14,7 +14,6 @@ if (isset($valider)) {
         $_SESSION["connecter"] = "yes";
         header("location:admin.php");
     } elseif ($user !== NULL) { //vérif si la variable $user est vide
-        $_SESSION["pseudo_user"] = $pseudo;
         $_SESSION["id_user"] = $user->getId();
         $_SESSION["connecter"] = "yes";
         header("location:acceuil.php");
