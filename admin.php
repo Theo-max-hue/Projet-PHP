@@ -102,6 +102,8 @@ function afficherUser($tab)
     <body>
         <h2><?php echo  $bienvenue  ?></h2>
         <a href="deconnexion.php">Se déconnecter</a>
+
+        <a href="acceuil.php" class=Acceuil>Acceuil</a>
         <?php
         $manager = new UserManager($pdo);
         afficherUser($manager->getUsersList());
