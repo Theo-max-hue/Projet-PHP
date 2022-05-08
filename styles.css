@@ -29,7 +29,7 @@ navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll{
 }
 .items1{
     display:block;
-    border: solid 2px red;
+    
     width:auto;
     justify-content: center;
     color: white;
@@ -37,7 +37,7 @@ navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll{
 
 }
 .total{
-    border: solid 2px red;
+   
     width: auto;
     justify-content: center;
     color: white;
@@ -48,8 +48,7 @@ navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll{
     /***********************************/
 h1{
     color: azure;
-    background-color: black;
-    width:120px;
+   
     border-radius: 8%;
     text-align: left;
 
@@ -85,7 +84,7 @@ color: white;
 }
 
 .container{
-    border: solid 2px red;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 2%;
     max-width: 100%;
 }
@@ -119,7 +118,7 @@ padding-top: 70px;
 right: 0;
 }
 .row{
-    border: solid 2px yellow;
+    
 
 }
 .col{
@@ -149,7 +148,7 @@ transform: scale(1.05);
 /* ------- foooooottterr ------- */
 
 .footer-dark {
-    padding:50px 0;
+    padding:0;
     color:#f0f9ff;
     background-color:black;
 }
