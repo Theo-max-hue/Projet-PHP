@@ -55,6 +55,21 @@ h1{
 
 
 }
+.image .prixAndButton{
+    display:flex;
+   
+}
+
+.prix p{
+background-color: black;
+color: white;
+}
+.btnAjou{
+    text-align: right;
+    margin-left: 30%;
+    
+}
+
 
 .fleche{
     margin: 17px 0px 17px 0px ;

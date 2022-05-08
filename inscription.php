@@ -27,11 +27,15 @@ if (isset($valider)) {
 }
 ?>
 <!DOCTYPE html>
-
-<html>
-
+<html lang="fr">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleAuthentification.css">
+
+
+    <title>authentification</title>
+</head>
     <style>
         * {
             font-family: arial;
@@ -43,16 +47,17 @@ if (isset($valider)) {
 
         form {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             margin-left: -150px;
             margin-top: -100px;
+           
         }
 
         h1 {
             text-align: center;
             color: #FFFAFA;
-            background: gray;
+            background: black;
         }
 
         input[type=submit] {
@@ -80,17 +85,22 @@ if (isset($valider)) {
             color: red;
             margin-top: 10px;
 
+
         }
 
         a {
             font-size: 14pt;
-            color: blue;
+            color: yellow;
             text-decoration: none;
             font-weight: normal;
+            
+            padding: 2%;
+            border-radius:10px;
         }
 
         a:hover {
             text-decoration: underline;
+            color: yellow;
         }
     </style>
 </head>
