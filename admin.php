@@ -1,40 +1,19 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-
-
-    <title>Admin</title>
-</head>
-<body>
-    <script>
-        function del(id){
-            if(confirm("Voulez-vous supprimer l'utilisateur avec l'id : "+ id + "?")){
-            //     fetch("mysql:host=devbdd.iutmetz.univ-lorraine.fr;dbname=gamard3u_bdd_php", "gamard3u_appli", "32021323", {
-            //     method: 'DELETE',
-            // })
-            //     .then(function () {
-            //         affichage();
-            //         display('Add');
-            //     })
-            //     .catch(err => console.log(err));
-            // document.getElementById('saisie').value = '';  //trouver pour utiliser la classe usermanager avec requete ajax
-            }
-        }
-    </script>
 <?php
-
+session_start();
 include "user.class.php";
 include "connexion.php";
 
-session_start();
+
 if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 } else
     $bienvenue = "Bienvenue administrateur";
+    if(isset($del_id)){
+        $manager->deleteUser();
+        echo("teub");
+        afficherUser($manager->getUsersList());
+    }
 
 function afficherUser($tab)
 {
@@ -64,12 +43,27 @@ function afficherUser($tab)
     
         }
     }
-            
-            
 ?>
 
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <title>Admin</title>
+</head>
+<body>
+    <script src="requetesAjax.js">
+        function del(id){
+            if(confirm("Voulez-vous supprimer l'utilisateur avec l'id : "+ id + "?")){
+                
+            }
+        }
+        
+    </script>
 
     <head>
         <meta charset="utf-8" />
@@ -102,8 +96,6 @@ function afficherUser($tab)
     <body>
         <h2><?php echo  $bienvenue  ?></h2>
         <a href="deconnexion.php">Se déconnecter</a>
-
-        <a href="acceuil.php" class=Acceuil>Acceuil</a>
         <?php
         $manager = new UserManager($pdo);
         afficherUser($manager->getUsersList());
