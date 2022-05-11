@@ -9,8 +9,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2><?php echo  $bienvenue  ?></h2>
-<a href="deconnexion.php">Se déconnecter</a>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-black  position:fixed">
     <div class="container-fluid">
@@ -44,5 +43,7 @@
 
         </div>
     </div>
+    <h2><?php echo  $bienvenue  ?></h2>
+<a href="deconnexion.php">Se déconnecter</a>
 </nav>
 </div>
