@@ -9,10 +9,9 @@ if ($_SESSION["connecter"] != "yes") {
     exit();
 } else
     $bienvenue = "Bienvenue administrateur";
-    if(isset($del_id)){
-        $manager->deleteUser();
-        echo("teub");
-        afficherUser($manager->getUsersList());
+    if(isset($_GET['id'])){
+        $manager = new UserManager($pdo);
+        $manager->deleteUser($_GET['id']);
     }
 
 function afficherUser($tab)
@@ -37,8 +36,10 @@ function afficherUser($tab)
       <td><?php echo $user->getPseudo()?></td>
       <td><?php echo $user->getPass()?></td>
     </tr></tbody>
-    <button type="button" onclick="del(this.value)" value="<?=$user->getId();?>" class="btn btn-danger">Supprimer <?php echo $user->getPrenom()?></button>
-    
+
+    <form method="POST" action="admin.php?id=<?= $user->getId();?>">
+    <button onclick="verif(this.value)" value="<? $user->getPseudo();?>" type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
     <?php
     
         }
@@ -56,14 +57,6 @@ function afficherUser($tab)
     <title>Admin</title>
 </head>
 <body>
-    <script src="requetesAjax.js">
-        function del(id){
-            if(confirm("Voulez-vous supprimer l'utilisateur avec l'id : "+ id + "?")){
-                
-            }
-        }
-        
-    </script>
 
     <head>
         <meta charset="utf-8" />
@@ -93,13 +86,21 @@ function afficherUser($tab)
         </style>
     </head>
 
-    <body>
+    
         <h2><?php echo  $bienvenue  ?></h2>
         <a href="deconnexion.php">Se déconnecter</a>
         <?php
         $manager = new UserManager($pdo);
         afficherUser($manager->getUsersList());
         ?>
+
+    <script>
+        function verif(pseudo){
+            if (confirm("Voulez-vous vraiment supprimer l'utilisateur : "+ pseudo + "?")){
+                // $_POST['verif']= "true";
+            }
+        }
+    </script>
 
     </body>
 
