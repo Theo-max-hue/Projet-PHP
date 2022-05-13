@@ -64,9 +64,9 @@ class PanierManager
         $getOne = $this->db->prepare("select * from Panier where numero_commande=? limit 1"); //savoir a quoi sert le limit1
         $panier = $getOne->execute(array($id));
         if ($panier = $getOne->fetch(PDO::FETCH_ASSOC)) {
-            $id = $panier['numero_utilisateur'];
+            $id = $panier['numero_commande'];
            
-            return new Panier($id,$total);
+            return new Panier($id , $listProduit ,$total);
         }
     }
 
