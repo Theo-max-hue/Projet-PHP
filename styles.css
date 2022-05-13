@@ -70,6 +70,10 @@ color: white;
 }
 
 
+.col{
+    overflow-x: scroll;
+  scroll-behavior: smooth;
+}
 .fleche{
     margin: 17px 0px 17px 0px ;
 }
