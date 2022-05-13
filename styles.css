@@ -22,28 +22,8 @@ navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll{
     color: azure;
 }
 
-.caddie{
-    display: flex;
 
 
-}
-.items1{
-    display:block;
-    
-    width:auto;
-    justify-content: center;
-    color: white;
-    list-style-type: none;
-
-}
-.total{
-   
-    width: auto;
-    justify-content: center;
-    color: white;
-    list-style-type: none;
-    width: auto;
-}
 
     /***********************************NNNAAAVV*/
 h1{
@@ -162,52 +142,7 @@ transform: scale(1.05);
     font-size:20px;
 }
 
-.footer-dark ul {
-    padding:0;
-    list-style:none;
-    line-height:1.6;
-    font-size:20px;
-    margin-bottom:0;
-}
 
-.footer-dark ul a {
-    color:inherit;
-    text-decoration:none;
-    opacity:0.6;
-}
-
-.footer-dark ul a:hover {
-    opacity:0.8;
-}
-
-
-
-
-@media (max-width:767px) {
-    .footer-dark .item:not(.social) {
-        text-align:center;
-        padding-bottom:20px;
-    }
-}
-
-.footer-dark .item.text {
-    margin-bottom:36px;
-}
-
-@media (max-width:767px) {
-    .footer-dark .item.text {
-        margin-bottom:0;
-    }
-}
-
-.footer-dark .item.text p {
-    opacity:0.6;
-    margin-bottom:0;
-}
-
-.footer-dark .item.social {
-    text-align:center;
-}
 
 
 .footer-dark .copyright {

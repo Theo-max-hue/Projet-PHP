@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-black  position:fixed">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <img src="./image/tdm.png" style="width:85px;height:85px;"></a>
+        <a class="navbar-brand" href="acceuil.php"> <img src="./image/tdm.png" style="width:85px;height:85px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,23 +23,12 @@
                     <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="pagePanier.php">Panier</a>
                 </li>
 
 
 
-            <ul class ="caddie"><a href="#"> <img src="./image/shop.png" class="rounded" alt="test" width="45px" id="shop"></a>
-            <li class="items1">
-                <p>Items</p>
-                <span>0</span>
-            </li>
-                <li class="total">
-                <p>total</p>
-                    <div class="span">
-                <span>0</span>
-                    </div>
-                </li>
-            </ul>
+            
 
         </div>
     </div>
