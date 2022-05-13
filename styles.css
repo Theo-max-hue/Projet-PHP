@@ -45,7 +45,7 @@ navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll{
     width: auto;
 }
 
-    /***********************************/
+    /***********************************NNNAAAVV*/
 h1{
     color: azure;
    
@@ -121,10 +121,8 @@ position: absolute;
 padding-top: 70px;
 right: 0;
 }
-.row{
-    
 
-}
+
 .col{
 
     display: flex;
@@ -149,7 +147,7 @@ transform: scale(1.05);
     padding-right: 2%;
 }
 
-/* ------- foooooottterr ------- */
+/* ------- foooooottterr -------------------------------------------------------- */
 
 .footer-dark {
     padding:0;

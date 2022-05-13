@@ -27,62 +27,57 @@ require("header.php");
 
     <div class="row">
 
-     <div class="col" id="div_avec_scrollFirst">
+        <div class="col" id="div_avec_scrollFirst">
         
-
-     <div class=image >
-            <a href="#" ></a> <img src="./image/missileTurque.jpg" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+            <div class="flecheFirst"> <input type="image" src="./image/btn_gauche.png" id="defilement_gaucheFirst" alt="Submit" width="48" height="100px"></div>
+                <div class=image >
+                <a href="#" ></a> <img src="./image/missileTurque.jpg" class="rounded" alt="test" width="300px"></a>
+                <div class=prixAndButton>
+                            <div class=prix > <p>getPrix </p></div>
+                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                    </div>
                 </div>
-            </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/missile pakistan.jpg" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                <div class=image >
+                <a href="#" ></a> <img src="./image/missile pakistan.jpg" class="rounded" alt="test" width="300px"></a>
+                <div class=prixAndButton>
+                            <div class=prix > <p>getPrix </p></div>
+                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                    </div>
                 </div>
-            </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/missile.jpg" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                <div class=image >
+                <a href="#" ></a> <img src="./image/missile.jpg" class="rounded" alt="test" width="300px"></a>
+                <div class=prixAndButton>
+                            <div class=prix > <p>getPrix </p></div>
+                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                    </div>
                 </div>
-            </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                <div class=image >
+                <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
+                <div class=prixAndButton>
+                            <div class=prix > <p>getPrix </p></div>
+                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                    </div>
                 </div>
-            </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                <div class=image >
+                <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
+                <div class=prixAndButton>
+                            <div class=prix > <p>getPrix </p></div>
+                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                    </div>
                 </div>
-            </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                <div class=image >
+                <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
+                <div class=prixAndButton>
+                            <div class=prix > <p>getPrix </p></div>
+                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                    </div>
                 </div>
-            </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
-              <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
-                </div>
-            </div>
-
+               
+                <div class="flecheDroiteFirst" ><input type="image" src="./image/btn-droit.png" id="defilement_droiteFirst" alt="Submit" width="48" height="100px"></div>
            
+             </div>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 <div class="container-title">
@@ -138,13 +133,7 @@ require("header.php");
                         <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
                 </div>
             </div>
-            <div class=image >
-            <a href="#" ></a> <img src="./image/guns8.png" class="rounded" alt="test" width="300px"></a>
-            <div class=prixAndButton>
-                        <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou><button type="button" class="btn btn-warning">Ajouter</button></div>
-                </div>
-            </div>
+            
 
             <div class="flecheDroite" ><input type="image" src="./image/btn-droit.png" id="defilement_droite" alt="Submit" width="48" height="100px"></div>
 
