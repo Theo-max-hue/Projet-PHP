@@ -8,14 +8,18 @@ if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 }
+$teub ="";
 $manager = new UserManager($pdo);
 $user = $manager->getById($_SESSION['id_user']);
+
 if (date("H") < 18)  //PAGE QUI S'AFFICHE EN SE CONNECTANT
-    $bienvenue = "Bonjour "  . $user->getPseudo();
+    $bienvenue = "Bonjour "  . $user->getPseudo() . $teub;
 else
-    $bienvenue = "Bonsoir "  . $user->getPseudo();
+    $bienvenue = "Bonsoir "  . $user->getPseudo() . $teub;
 ?>
 
+<script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+<script src="requeteJquery.js"></script>
 
 <?php
 require("header.php");
@@ -34,42 +38,42 @@ require("header.php");
                 <a href="#" ></a> <img src="./image/missileTurque.jpg" class="rounded" alt="test" width="300px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><button id="btn" onclick="ajoutItem(this.value)" value="1" class="btn btn-warning">Ajouter</button></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="./image/missile pakistan.jpg" class="rounded" alt="test" width="300px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><input id="btn" onclick="ajoutItem(this.value)" type="button" value="2" class="btn btn-warning">Ajouter</input></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="./image/missile.jpg" class="rounded" alt="test" width="300px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><input id="btn" onclick="ajoutItem(this.value)" type="button" value="3" class="btn btn-warning">Ajouter</input></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><input id="btn" onclick="ajoutItem(this.value)" type="button" value="4" class="btn btn-warning">Ajouter</input></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><input id="btn" onclick="ajoutItem(this.value)" type="button" value="5" class="btn btn-warning">Ajouter</input></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="./image/falloutEcran.png" class="rounded" alt="test" width="300px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><input id="btn" onclick="ajoutItem(this.value)" type="button" value="6" class="btn btn-warning">Ajouter</input></div>
                     </div>
                 </div>
                

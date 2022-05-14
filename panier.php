@@ -4,21 +4,27 @@ session_start();
 include "user.class.php";
 include('panier.class.php');
 include("connexion.php");
-require("header.php");
 if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 }else{
+
+if(isset($GET['btnValue'])){
+    $teub = array();
+    $teub[] = $GET['btnValue'];
+}
+    
 $manager = new UserManager($pdo);
 $user = $manager->getById($_SESSION['id_user']);
-
+$bienvenue = "Votre panier ". $user->getPseudo();
+require("header.php");
 $panierManager = new PanierManager($pdo);
 $panier = $panierManager->getById($user->getId());
-afficherPanier($panier);
+afficherPanier($panier, $teub);
 }
 
 
-function afficherPanier($panier)
+function afficherPanier($panier, $teub)
 {
     ?>
         <table class="table table-striped table-dark">
@@ -32,7 +38,7 @@ function afficherPanier($panier)
             <tbody>
                 <tr>
                     <th scope="row"><?php echo $panier->getNumeroPanier() ?></th>
-                    <td><?php echo $panier->getListProduit() ?></td>
+                    <td id="divAffichageResultat" ><?php var_dump($teub)?></td>
                     <td><?php echo $panier->getTotal() ?></td>
                 </tr>
             </tbody>
