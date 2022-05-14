@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include "user.class.php";
+include "user.class.php ";
 include('panier.php');
 include("connexion.php");
 if ($_SESSION["connecter"] != "yes") {
