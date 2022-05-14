@@ -37,7 +37,7 @@ class panier{
     {
         $this->listProduit = $listProduit;
     }
-    public function getlistProduit()
+    public function getListProduit()
     {
         return $this->listProduit;
     }
