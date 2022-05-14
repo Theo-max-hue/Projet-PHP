@@ -23,7 +23,7 @@
                     <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pagePanier.php">Panier</a>
+                    <a class="nav-link" href="panier.php">Panier</a>
                 </li>
 
 

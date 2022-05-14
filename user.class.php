@@ -82,6 +82,11 @@ class UserManager
         $this->setDb($db);
     }
 
+    public function createUser($nom, $prenom, $pseudo, $email, $password){
+        $create = $this->db->prepare("insert into User(nom,prenom,pseudo,email,password) values(?,?,?,?,?)");
+        $create->execute(array($nom, $prenom, $pseudo, $email, md5($password)));
+    }
+
     public function getUsersList()
     {
         $tab = array();

@@ -3,6 +3,7 @@
 session_start();
 include("infos.php");
 include('user.class.php');
+include("panier.class.php");
 include("connexion.php");
 @$valider = $_POST["valider"];
 $erreur = "";
@@ -16,6 +17,11 @@ if (isset($valider)) {
     } elseif ($user !== NULL) { //vérif si la variable $user est vide
         $_SESSION["id_user"] = $user->getId();
         $_SESSION["connecter"] = "yes";
+        $panierManager = new PanierManager($pdo);
+        if (!$panierManager->getById($user->getId())){ // Crée un panier avec la même id que l'utilisateur si pas deja un
+            $listeProduit = array();
+            $panierManager->createPanier($user->getId(), $listeProduit, 0);
+        }
         header("location:acceuil.php");
     } else
         $erreur = "Mauvais login ou mot de passe!";

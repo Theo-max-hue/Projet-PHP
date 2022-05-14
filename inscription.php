@@ -2,6 +2,8 @@
 
 session_start();
 include("infos.php");
+include("user.class.php");
+include("connexion.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
 if (isset($valider)) {
@@ -12,20 +14,19 @@ if (isset($valider)) {
     elseif (empty($password)) $erreur = "Le champs mot de passe est obligatoire !";
     elseif ($password != $passwordConf) $erreur = "Mots de passe differents !";
     else {
-        include("connexion.php");
         $verify_pseudo = $pdo->prepare("select numero_utilisateur from User where pseudo=? limit 1");
         $verify_pseudo->execute(array($pseudo));
         $user_pseudo = $verify_pseudo->fetchAll();
         if (count($user_pseudo) > 0)
             $erreur = "Ce pseudo existe déjà!";
         else {
-            $ins = $pdo->prepare("insert into User(nom,prenom,pseudo,email,password) values(?,?,?,?,?)");
-            if ($ins->execute(array($nom, $prenom, $pseudo, $email, md5($password)))) {
-                header("location:authentification.php");
-            }
+            $manager = new UserManager($pdo);
+            $manager->createUser($nom, $prenom, $pseudo, $email, $password);
+            header("location:authentification.php");
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -11,6 +11,7 @@ if ($_SESSION["connecter"] != "yes") {
     exit();
 }
 if (isset($valider)) {
+    // echo "<td><a onClick=\"javascript: return confirm('Please confirm teub');\" href='profil.php?id=".$_SESSION['id_user']."'>x</a></td><tr>"; //use double quotes for js inside php!
     $manager = new UserManager($pdo);
     echo ($email);
     echo ($pseudo);
