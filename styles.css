@@ -36,6 +36,7 @@ h1{
 }
 .image .prixAndButton{
     display:flex;
+    z-index: 10;
    
 }
 
