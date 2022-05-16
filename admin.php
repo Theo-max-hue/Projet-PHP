@@ -47,52 +47,9 @@ function afficherUser($tab)
 }
     ?>
 
-    <!DOCTYPE html>
-    <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
-
-
-        <title>Admin</title>
-    </head>
-
-    <body>
-
-        <head>
-            <meta charset="utf-8" />
-            <style>
-                * {
-                    font-family: arial;
-                }
-
-                body {
-                    margin: 20px;
-                }
-
-                h2 {
-                    text-align: center;
-                    color: pink;
-                }
-
-                a {
-                    color: blue;
-                    text-decoration: none;
-                    float: right;
-                }
-
-                a:hover {
-                    text-decoration: underline;
-                }
-            </style>
-        </head>
-
-
-        <h2><?php echo  $bienvenue  ?></h2>
-        <a href="deconnexion.php">Se déconnecter</a>
         <?php
+        require("header.php");
         $manager = new UserManager($pdo);
         afficherUser($manager->getUsersList());
         ?>
