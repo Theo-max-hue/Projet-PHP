@@ -126,7 +126,10 @@ transform: scale(1.05);
 .Acceuil{
     padding-right: 2%;
 }
-
+/*----------------page---profil----*/
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+    padding: 10px;
 /* ------- foooooottterr -------------------------------------------------------- */
 
 .footer-dark {

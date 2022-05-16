@@ -59,14 +59,14 @@ require("header.php");
 
 <body onLoad="document.formProfil.nom.focus()">
 
-    <form method="post" name="formProfil">
+    <form method="post" name="formProfil" style="width: 50%;">
 
         <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">Nom</span>
             <input type="text" class="form-control" name="nom" placeholder="<?php echo ($user->getNom()); ?>" value="<?= $nom ?>">
         </div>
 
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap ">
             <span class="input-group-text" id="addon-wrapping">Prenom</span>
             <input type="text" class="form-control" name="prenom" placeholder="<?php echo ($user->getPrenom()); ?>" value="<?= $prenom ?>">
         </div>
@@ -91,6 +91,3 @@ require("header.php");
     </form>
 
 </body>
-<?php
-require("footer.php");
-?>
