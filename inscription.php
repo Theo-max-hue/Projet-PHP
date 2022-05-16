@@ -34,78 +34,12 @@ if (isset($valider)) {
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleAuthentification.css">
+    <link rel="stylesheet" href="styleInscription.css">
 
 
-    <title>authentification</title>
+    <title>inscription</title>
 </head>
-<style>
-    * {
-        font-family: arial;
-    }
 
-    body {
-        margin: 20px;
-    }
-
-    form {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        margin-left: -150px;
-        margin-top: -100px;
-
-    }
-
-    h1 {
-        text-align: center;
-        color: #FFFAFA;
-        background: black;
-    }
-
-    input[type=submit] {
-        border: solid 1px violet;
-        margin-bottom: 10px;
-        float: right;
-        padding: 15px;
-        outline: none;
-        border-radius: 7px;
-        width: 120px;
-    }
-
-    input[type=text],
-    [type=password] {
-        border: solid 1px violet;
-        margin-bottom: 10px;
-        padding: 16px;
-        outline: none;
-        border-radius: 7px;
-        width: 300px;
-    }
-
-    .erreur {
-        text-align: center;
-        color: red;
-        margin-top: 10px;
-
-
-    }
-
-    a {
-        font-size: 14pt;
-        color: yellow;
-        text-decoration: none;
-        font-weight: normal;
-
-        padding: 2%;
-        border-radius: 10px;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        color: yellow;
-    }
-</style>
 </head>
 
 <body onLoad="document.fo.nom.focus()">
