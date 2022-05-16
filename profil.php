@@ -1,8 +1,8 @@
 <?php
 
-include "user.class.php";
-include "connexion.php";
-include "infos.php";
+include "./controller/user.class.php";
+include "./modele/connexion.php";
+include "./modele/infos.php";
 
 
 session_start();

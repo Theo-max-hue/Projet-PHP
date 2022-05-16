@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-include("infos.php");
-include("user.class.php");
-include("connexion.php");
+include("./modele/infos.php");
+include("./controller/user.class.php");
+include("./modele/connexion.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
 if (isset($valider)) {
@@ -34,7 +34,7 @@ if (isset($valider)) {
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleInscription.css">
+    <link rel="stylesheet" href="./public/styleInscription.css">
 
 
     <title>inscription</title>

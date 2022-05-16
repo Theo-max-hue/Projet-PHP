@@ -3,9 +3,9 @@
 <?php
 
 session_start();
-include "user.class.php";
-include('panier.class.php');
-include("connexion.php");
+include "./controller/user.class.php";
+include('./controller/panier.class.php');
+include("./modele/connexion.php");
 if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();

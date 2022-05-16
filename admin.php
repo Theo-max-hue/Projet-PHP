@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "user.class.php";
-include "connexion.php";
+require('./controller/user.class.php');
+require('./modele/connexion.php');
 
 
 if ($_SESSION["connecter"] != "yes") {
@@ -49,7 +49,7 @@ function afficherUser($tab)
 
 
         <?php
-        require("header.php");
+        require("./header.php");
         $manager = new UserManager($pdo);
         afficherUser($manager->getUsersList());
         ?>

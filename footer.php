@@ -14,6 +14,6 @@
 
     </footer>
 </div>
-<script src="index.js"></script>
+<script src="./public/index.js"></script>
 </body>
 </html>
