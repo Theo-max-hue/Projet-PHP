@@ -130,6 +130,7 @@ transform: scale(1.05);
 .flex-nowrap {
     flex-wrap: nowrap !important;
     padding: 10px;
+}
 /* ------- foooooottterr -------------------------------------------------------- */
 
 .footer-dark {
