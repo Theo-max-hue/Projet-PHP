@@ -40,6 +40,15 @@ input[type=text],
     border-radius: 7px;
     width: 300px;
 }
+input[type=email],
+[type=password] {
+    border: solid 1px violet;
+    margin-bottom: 10px;
+    padding: 16px;
+    outline: none;
+    border-radius: 7px;
+    width: 300px;
+}
 
 .erreur {
     text-align: center;
