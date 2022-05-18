@@ -39,25 +39,21 @@ function afficherUser($tab)
             </tbody>
 
             <form method="POST" action="admin.php?id=<?= $user->getId(); ?>">
-                <button onclick="verif(this.value)" value="<? $user->getPseudo(); ?>" type="submit" class="btn btn-danger">Supprimer</button>
+                <button onclick="info()" type="submit" class="btn btn-danger">Supprimer</button>
             </form>
     <?php
 
     }
 }
     ?>
-
-
         <?php
         require("header.php");
         $manager = new UserManager($pdo);
         afficherUser($manager->getUsersList());
         ?>
-
         <script>
-            function verif(pseudo) {
-                if (confirm("Voulez-vous vraiment supprimer l'utilisateur : " + pseudo + "?")) {
-                }
+            function info() {
+                alert("L'utilisateur a bien été supprimé !");
             }
         </script>
 
