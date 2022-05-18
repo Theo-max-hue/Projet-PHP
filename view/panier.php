@@ -11,22 +11,19 @@ if ($_SESSION["connecter"] != "yes") {
     exit();
 }else{
 
-if(isset($GET['btnValue'])){
-    $teub = array();
-    $teub[] = $GET['btnValue'];
-}
-    
 $manager = new UserManager($pdo);
-$user = $manager->getById($_SESSION['id_user']);
+$user = $manager->getUserById($_SESSION['id_user']);
 $bienvenue = "Votre panier ". $user->getPseudo();
 require("header.php");
 $panierManager = new PanierManager($pdo);
-$panier = $panierManager->getById($user->getId());
-afficherPanier($panier, $teub);
+$panier = $panierManager->getPanierById($user->getId());
+$tab = $panier->getListProduit();
+$liste = explode(",",$tab);
+afficherPanier($panier, $liste);
 }
 
 
-function afficherPanier($panier, $teub)
+function afficherPanier($panier, $liste)
 {
     ?>
         <table class="table table-striped table-dark">
@@ -39,8 +36,8 @@ function afficherPanier($panier, $teub)
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row"><?php echo $panier->getNumeroPanier() ?></th>
-                    <td id="divAffichageResultat" ><?php var_dump($teub)?></td>
+                    <th scope="row"><?php echo $panier->getNumeroPanier();?></th>
+                    <td><?php var_dump($liste)?></td>
                     <td><?php echo $panier->getTotal() ?></td>
                 </tr>
             </tbody>

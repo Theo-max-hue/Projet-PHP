@@ -16,11 +16,11 @@ if (isset($valider)) {
     echo ($email);
     echo ($pseudo);
     $manager->updateUser($nom, $prenom, $pseudo, $email, $password, $_SESSION['id_user']);
-    $user = $manager->getById($_SESSION['id_user']);
+    $user = $manager->getUserById($_SESSION['id_user']);
     header("location:acceuil.php");
 } else {
     $manager = new UserManager($pdo);
-    $user = $manager->getById($_SESSION['id_user']);
+    $user = $manager->getUserById($_SESSION['id_user']);
 }
 
 ?>

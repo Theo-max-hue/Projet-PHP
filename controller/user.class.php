@@ -104,7 +104,7 @@ class UserManager
         return $tab;
     }
 
-    public function getById($id)
+    public function getUserById($id)
     {
         $getOne = $this->db->prepare("select * from User where numero_utilisateur=? limit 1"); //savoir a quoi sert le limit1
         $user = $getOne->execute(array($id));

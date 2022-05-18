@@ -3,7 +3,7 @@ $(document).ready(function() {
         var clickBtnValue = $(this).val();
         var idPanier = $(this).data('id');
         console.log(idPanier);
-        var ajaxurl = 'receptionDonnees.php',
+        var ajaxurl = '../modele/receptionDonnees.php',
             data = { 'item_src': clickBtnValue, 'id_panier': idPanier };
         $.post(ajaxurl, data, function(response) {
             //Response div goes here.
