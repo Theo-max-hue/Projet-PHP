@@ -18,8 +18,8 @@ if (isset($valider)) {
         $_SESSION["id_user"] = $user->getId();
         $_SESSION["connecter"] = "yes";
         $panierManager = new PanierManager($pdo);
-        if (!$panierManager->getById($user->getId())){ // Crée un panier avec la même id que l'utilisateur si pas deja un
-            $listeProduit = array();
+        if (!$panierManager->getPanierById($user->getId())){ // Crée un panier avec la même id que l'utilisateur si pas deja un
+            $listeProduit = "";
             $panierManager->createPanier($user->getId(), $listeProduit, 0);
         }
         header("location:acceuil.php");
@@ -27,7 +27,6 @@ if (isset($valider)) {
         $erreur = "Mauvais login ou mot de passe!";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

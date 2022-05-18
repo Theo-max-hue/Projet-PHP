@@ -1,19 +1,13 @@
-function ajoutItem(id) {
-    // Fetching Button value
-    let btnValue = id;
-    console.log(btnValue);
-
-    // jQuery Ajax Post Request
-    $.ajax({
-        type: "POST",
-        url: "panier.php",
-        data: btnValue,
-        success: function(response) {
-            $('#divAffichageResultat').html(response);
-            console.log(response);
-        },
-        error: function(response) {
-            console.log(response);
-        }
+$(document).ready(function() {
+    $('.button').click(function() {
+        var clickBtnValue = $(this).val();
+        var idPanier = $(this).data('id');
+        console.log(idPanier);
+        var ajaxurl = 'receptionDonnees.php',
+            data = { 'item_src': clickBtnValue, 'id_panier': idPanier };
+        $.post(ajaxurl, data, function(response) {
+            //Response div goes here.
+            alert("Item ajouté au panier !");
+        });
     });
-};
+});
