@@ -16,6 +16,8 @@ else
     $bienvenue = "Bonsoir "  . $user->getPseudo();
 ?>
 
+<script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+<script src="../public/requeteJquery.js"></script>
 
 <?php
 require("header.php");
@@ -33,43 +35,43 @@ require("header.php");
                 <div class=image >
                 <a href="#" ></a> <img src="../public/image/missileTurque.jpg" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
-                            <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=prix > <p><?php echo $user->getId() ?> </p></div>
+                            <div class=btnAjou ><div class=btnAjou><button class="button btn btn-warning" value="../public/image/missileTurque.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="../public/image/missile pakistan.jpg" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><button class="button btn btn-warning" value="../public/image/missile pakistan.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="../public/image/missile.jpg" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou >class=btnAjou><button class="button btn btn-warning" value="../public/image/missile.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="../public/image/China.jpg" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><div class=btnAjou >class=btnAjou><button class="button btn btn-warning" value="../public/image/china.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="../public/image/panzer.JPG" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><div class=btnAjou >class=btnAjou><button class="button btn btn-warning" value="../public/image/panzer.JPG" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                     </div>
                 </div>
                 <div class=image >
                 <a href="#" ></a> <img src="../public/image/Bombe-B61.jpg" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
                             <div class=prix > <p>getPrix </p></div>
-                            <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                            <div class=btnAjou ><div class=btnAjou >class=btnAjou><button class="button btn btn-warning" value="../public/image/Bombe-B61.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                     </div>
                 </div>
                
@@ -95,42 +97,42 @@ require("header.php");
                 <a href="#" ></a> <img src="../public/image/guns1.jpg" class="rounded" alt="test" width="auto" height="200px"></a>
                 <div class=prixAndButton>
                         <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                        <div class=btnAjou ><div class=btnAjou >class=btnAjou><button class="button btn btn-warning" value="../public/image/guns1.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                 </div>
             </div>
             <div class=image >
             <a href="#" ></a> <img src="../public/image/guns2.png" class="rounded" alt="test" width="auto" height="200px"></a>
             <div class=prixAndButton>
                         <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                        <div class=btnAjou ><button class="button btn btn-warning" value="../public/image/guns2.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                 </div>
             </div>
             <div class=image >
             <a href="#" ></a> <img src="../public/image/guns3.png" class="rounded" alt="test" width="auto" height="200px"></a>
             <div class=prixAndButton>
                         <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                        <div class=btnAjou ><button class="button btn btn-warning" value="../public/image/guns3.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                 </div>
             </div>
             <div class=image >
             <a href="#" ></a> <img src="../public/image/guns4.png" class="rounded" alt="test" width="auto" height="200px"></a>
             <div class=prixAndButton>
                         <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                        <div class=btnAjou ><button class="button btn btn-warning" value="../public/image/guns4.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                 </div>
             </div>
             <div class=image >
             <a href="#" ></a> <img src="../public/image/guns6.png" class="rounded" alt="test" width="auto" height="200px"></a>
             <div class=prixAndButton>
                         <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou><button type="button" class="btn btn-warning">Ajouter</button></div>
+                        <div class=btnAjou><button class="button btn btn-warning" value="../public/image/guns6.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                 </div>
             </div>
             <div class=image >
             <a href="#" ></a> <img src="../public/image/guns7.png" class="rounded" alt="test" width="auto" height="200px"></a>
             <div class=prixAndButton>
                         <div class=prix > <p>getPrix </p></div>
-                        <div class=btnAjou ><button type="button" class="btn btn-warning">Ajouter</button></div>
+                        <div class=btnAjou ><button class="button btn btn-warning" value="../public/image/guns7.jpg" data-id="<?php echo $user->getId() ?>">Ajouter</button></div>
                 </div>
             </div>
             

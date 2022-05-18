@@ -49,7 +49,7 @@ if (isset($valider)) {
         <input type="text" name="nom" placeholder="Nom" value="<?= $nom  ?>" /><br />
         <input type="text" name="prenom" placeholder="Prénom" value="<?= $prenom  ?>" /><br />
         <input type="text" name="pseudo" placeholder="Votre Pseudo" value="<?= $pseudo  ?>" /><br />
-        <input type="text" name="email" placeholder="Votre Email" value="<?= $email  ?>" /><br />
+        <input type="email" name="email" placeholder="Votre Email" value="<?= $email  ?>" /><br />
         <input type="password" name="password" placeholder="Mot de passe" /><br />
         <input type="password" name="passconf" placeholder="Confirmez votre Mot de passe" /><br />
         <input type="submit" name="inscrire" value="S'inscrire" />

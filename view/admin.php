@@ -57,7 +57,6 @@ function afficherUser($tab)
         <script>
             function verif(pseudo) {
                 if (confirm("Voulez-vous vraiment supprimer l'utilisateur : " + pseudo + "?")) {
-                    // $_POST['verif']= "true";
                 }
             }
         </script>
