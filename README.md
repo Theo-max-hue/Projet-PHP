@@ -17,8 +17,6 @@ Site internet de vente d'armes et missiles:
 
 
 ## Description
-- switcher sur la branche copy pour avoir la bonne version du projet
-git checkout copy
 
 ## Droit utilisateur 
 - inscription au site
