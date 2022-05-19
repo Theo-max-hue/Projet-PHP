@@ -1,0 +1,158 @@
+
+body{
+    font-size: 25px;
+
+    background-image: url("../public/image/fond.png");
+
+
+}
+/*****************************************/
+.navbar{
+    padding: 0px;
+    margin-bottom: 10px;
+}
+navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll{
+    margin-right: 0px;
+}
+.navbar-light .navbar-nav .nav-link.active{
+    color: azure;
+
+}
+.navbar-light .navbar-nav .nav-link{
+    color: azure;
+}
+
+
+
+
+    /***********************************NNNAAAVV*/
+h1{
+    color: azure;
+   
+    border-radius: 8%;
+    text-align: left;
+
+
+}
+.image .prixAndButton{
+    display:flex;
+    z-index: 10;
+   
+}
+
+.prix p{
+background-color: black;
+color: white;
+}
+.btnAjou{
+    
+    margin-left: 1%;
+    
+}
+
+
+.col{
+    overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.fleche{
+    margin: 17px 0px 17px 0px ;
+}
+.flecheDroite{
+    margin: 17px 0px 17px 0px ;
+}
+.flecheFirst{
+    margin: 17px 0px 17px 0px ;
+}
+.flecheDroiteFirst{
+    margin: 17px 0px 17px 0px ;
+}
+
+.container{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2%;
+    max-width: 100%;
+}
+
+#defilement_gauche{
+    scroll-behavior: smooth;
+   position: absolute;
+    padding-top: 70px;
+    left: 0;
+
+
+}
+#defilement_droite{
+    scroll-behavior: smooth;
+position: absolute;
+padding-top: 70px;
+right: 0;
+}
+#defilement_gaucheFirst{
+    scroll-behavior: smooth;
+   position: absolute;
+    padding-top: 70px;
+    left: 0;
+
+
+}
+#defilement_droiteFirst{
+    scroll-behavior: smooth;
+position: absolute;
+padding-top: 70px;
+right: 0;
+}
+
+
+.col{
+
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+.col .rounded {
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 10%;
+
+}
+.col .rounded:hover {
+    padding: 4px;
+    cursor: pointer;
+transform: scale(1.05);
+
+
+}
+.Acceuil{
+    padding-right: 2%;
+}
+/*----------------page---profil----*/
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+    padding: 10px;
+}
+/* ------- foooooottterr -------------------------------------------------------- */
+
+.footer-dark {
+    padding:0;
+    color:#f0f9ff;
+    background-color:black;
+}
+
+.footer-dark h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:20px;
+}
+
+
+.footer-dark .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:0.3;
+    font-size:17px;
+    margin-bottom:0;
+}
+
