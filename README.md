@@ -17,7 +17,7 @@ Site internet de vente d'armes et missiles:
 
 
 ## Description
-
+- On peut ajouter un article au panier mais pour le moment on ne peut pas les supprimer
 ## Droit utilisateur 
 - inscription au site
 - Achat d'arme et de missile
