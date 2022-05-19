@@ -5,7 +5,7 @@ session_start();
 include('../controller/user.class.php');
 include('../controller/item.class.php');
 include("../modele/connexion.php");
-if ($_SESSION["connecter"] != "yes") {
+if ($_SESSION["connecter"] != "yes") { //vérifie si l'utilisateur est bien connecté
     header("location:authentification.php");
     exit();
 }
@@ -18,6 +18,8 @@ $user = $manager->getUserById($_SESSION['id_user']);
 /* -------------------------------- Création instance itemManager et item -------------------------------- */
 
 $itemManager = new ItemManager($pdo);
+
+/* ------------------------------ déclaration variable bienvenue utilisée dans header.php --------------------------------*/ 
 
 
 if (date("H") < 18) 

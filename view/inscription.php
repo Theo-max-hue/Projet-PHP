@@ -6,20 +6,20 @@ include("../controller/user.class.php");
 include("../modele/connexion.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
-if (isset($valider)) {
+if (isset($valider)) { //vérification des champs
     if (empty($nom)) $erreur = "Le champs nom est obligatoire !";
     elseif (empty($prenom)) $erreur = "Le champs prénom est obligatoire !";
     elseif (empty($pseudo)) $erreur = "Le champs Pseudo est obligatoire !";
     elseif (empty($email)) $erreur = "Le champs Email est obligatoire !";
     elseif (empty($password)) $erreur = "Le champs mot de passe est obligatoire !";
     elseif ($password != $passwordConf) $erreur = "Mots de passe differents !";
-    else {
+    else { // vérif si user existe déjà dans la bdd
         $verify_pseudo = $pdo->prepare("select numero_utilisateur from User where pseudo=? limit 1");
         $verify_pseudo->execute(array($pseudo));
         $user_pseudo = $verify_pseudo->fetchAll();
         if (count($user_pseudo) > 0)
             $erreur = "Ce pseudo existe déjà!";
-        else {
+        else { // Création d'un nouvel user dans la bdd
             $manager = new UserManager($pdo);
             $manager->createUser($nom, $prenom, $pseudo, $email, $password);
             header("location:authentification.php");
@@ -41,6 +41,8 @@ if (isset($valider)) {
 </head>
 
 </head>
+
+<!-- formulaire d'inscription envoyé dans la bdd -->
 
 <body onLoad="document.fo.nom.focus()">
     <h1>Inscription</h1>

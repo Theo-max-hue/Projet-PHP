@@ -1,13 +1,11 @@
 $(document).ready(function() {
-    $('.button').click(function() {
-        var clickBtnValue = $(this).val();
+    $('.button').click(function() { // fonction qui se lance sur un onclick du bouton avec la classe button
+        var clickBtnValue = $(this).val(); // affectation des valeurs
         var idPanier = $(this).data('id');
-        console.log(idPanier);
         var ajaxurl = '../modele/receptionDonnees.php',
-            data = { 'item_src': clickBtnValue, 'id_panier': idPanier };
+            data = { 'item_src': clickBtnValue, 'id_panier': idPanier };// envoi de la src de l'img et l'id du panier à la page receptionDonnes.php
         $.post(ajaxurl, data, function(response) {
-            //Response div goes here.
-            alert("Item ajouté au panier !");
+            alert("Item ajouté au panier !"); // si la requête a bien fonctionné, affiche msg
         });
     });
 });

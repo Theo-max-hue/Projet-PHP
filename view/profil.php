@@ -12,10 +12,8 @@ if ($_SESSION["connecter"] != "yes") {
     exit();
 }
 $bienvenue = "Votre profil";
-if (isset($valider)) {
+if (isset($valider)) { //attente de la variable valider pour envoyer le formulaire dans la bdd
     $manager = new UserManager($pdo);
-    echo ($email);
-    echo ($pseudo);
     $manager->updateUser($nom, $prenom, $pseudo, $email, $password, $_SESSION['id_user']);
     $user = $manager->getUserById($_SESSION['id_user']);
     header("location:acceuil.php");
@@ -32,7 +30,9 @@ else {
 require("header.php");
 ?>
 
-<body onLoad="document.formProfil.nom.focus()">
+<!-- formulaire de modif du profil -->
+
+<body onLoad="document.formProfil.nom.focus()"> 
 
     <form method="post" name="formProfil" style="width: 50%;">
 

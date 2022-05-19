@@ -11,6 +11,7 @@ if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 }else{
+    
 
 /* -------------------------------- Création instance userManager et user -------------------------------- */
 
@@ -33,8 +34,22 @@ foreach($liste as $item){
     $tabItems[] = $itemManager->getItemBySrc($item);
 }
 
-afficherPanier($panier, $tabItems);
+// si la src est bien définie grâce au boutton supprimer, supprime le bon item dans le tableau
+
+if (isset($_GET['src'])){
+    $index = 0;
+    foreach ($tabItems as $item){
+        if ($item->getSrc() == $_GET['src']){
+            unset($tabItems[$index]);
+        }$index ++;
+    }
 }
+
+
+}
+
+afficherPanier($panier, $tabItems);
+
 
 function calculTotal($tabItems){
     $total = 0;
@@ -45,9 +60,14 @@ function calculTotal($tabItems){
 
 function affficherTableauItem($tabItems){
     foreach ($tabItems as $item){ ?>
+    <form method="POST" action="panier.php?src=<?= $item->getSrc(); ?>">
+        <button type="submit" class="btn btn-danger mb-4">Supprimer</button>
+    </form>
         <p><?php echo $item->getNom();?></p> 
         <p><?php echo $item->getPrix() . " $";?></p>
-        <img height="200px" class="align-baseline" src="<?php echo $item->getSrc();?>"><?php 
+        <img height="200px" class="align-baseline" src="<?php echo $item->getSrc();?>">
+        <hr>
+        <?php 
     }
 }
 

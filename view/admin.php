@@ -8,11 +8,13 @@ if ($_SESSION["connecter"] != "yes") {
     header("location:authentification.php");
     exit();
 } else
-    $bienvenue = "Bienvenue administrateur";
+    $bienvenue = "Bienvenue administrateur"; //déclaration variable bienvenue utilisée dans header.php
 if (isset($_GET['id'])) {
     $manager = new UserManager($pdo);
     $manager->deleteUser($_GET['id']);
 }
+
+/* ------------------------------ Affiche tous les users de la bdd grace au tableau récupéré dans la bdd--------------------------------*/ 
 
 function afficherUser($tab)
 {
@@ -37,6 +39,8 @@ function afficherUser($tab)
                     <td><?php echo $user->getEmail() ?></td>
                 </tr>
             </tbody>
+            
+<!-- Formulaire pour post l'id de l'utilisateur qui doit être supprimé -->
 
             <form method="POST" action="admin.php?id=<?= $user->getId(); ?>">
                 <button onclick="info()" type="submit" class="btn btn-danger">Supprimer</button>
@@ -47,9 +51,9 @@ function afficherUser($tab)
 }
     ?>
         <?php
-        require("header.php");
-        $manager = new UserManager($pdo);
-        afficherUser($manager->getUsersList());
+        require("header.php"); // appel de header.php
+        $manager = new UserManager($pdo); //Création d'une instance de user manager
+        afficherUser($manager->getUsersList()); //Appel de la fonction afficher avec les users récupérés dans la bdd
         ?>
         <script>
             function info() {
